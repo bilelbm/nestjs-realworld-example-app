@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+  - source: .
+    destination: /home/ec2-user/indigo-heartbeat-service
+hooks:
+  AfterInstall:
+   - location: npm run start:prod
+     timeout: 300
+     runas: root
+  ApplicationStart:
+   - location: npm run build
+     timeout: 300
+     runas: root
