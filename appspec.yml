@@ -5,10 +5,10 @@ files:
     destination: /home/ec2-user/indigo-heartbeat-service
 hooks:
   AfterInstall:
-   - location: npm run start:prod
+   - location: scripts/build.sh
      timeout: 300
      runas: root
   ApplicationStart:
-   - location: npm run build
+   - location: scripts/run.sh
      timeout: 300
      runas: root
